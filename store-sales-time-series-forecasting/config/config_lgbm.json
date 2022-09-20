@@ -1,0 +1,18 @@
+{
+    "model": "LightGBM",
+    "cv_params": 
+    {
+        "max_bin": [100, 200, 300],
+        "boosting": ["gbdt", "dart"],
+        "max_depth": [3, 4, 5, 6, 7, 8],
+        "objective": ["regression"],
+        "learning_rate": [0.01]
+    },
+    "params":
+    {
+    },
+    "categorical_features":[
+    ],
+    "loss": "l2",
+    "random_seed": 13
+}

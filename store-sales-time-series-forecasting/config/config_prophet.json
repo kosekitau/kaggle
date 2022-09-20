@@ -1,0 +1,36 @@
+{
+    "country_holidays":false,
+    "cv_params": 
+    {
+        "changepoint_prior_scale": [0.001, 0.01, 0.1, 0.5],
+        "holidays_prior_scale": [0.01, 0.1, 1, 10],
+        "seasonality_mode": ["additive", "multiplicative"],
+        "seasonality_prior_scale": [0.01, 0.1, 1, 10]
+    },
+    "params": 
+    {
+        "changepoint_prior_scale": 0.05,
+        "changepoint_range": 0.8,
+        "changepoints": null,
+        "daily_seasonality": "auto",
+        "growth": "linear",
+        "holidays": null,
+        "holidays_prior_scale": 10.0,
+        "interval_width": 0.8,
+        "mcmc_samples": 0,
+        "n_changepoints": 25,
+        "seasonality_mode": "additive",
+        "seasonality_prior_scale": 10.0,
+        "stan_backend": null,
+        "uncertainty_samples": 1000,
+        "weekly_seasonality": "auto",
+        "yearly_seasonality": "auto"
+    },
+    "periods": [
+        {"end": "2014-12-31", "start": "2014-01-01"},
+        {"end": "2015-12-31", "start": "2015-01-01"},
+        {"end": "2016-12-31", "start": "2016-01-01"}
+    ],
+    "regressors": null,
+    "train_days": null
+}
