@@ -54,11 +54,12 @@ class LinearRegression_log(Model):
         
 class Ridge_log(Model):
     
-    def __init__(self, alpha, standardscaler_features, n_jobs=-1):
+    def __init__(self, alpha, standardscaler_features, drop_features, n_jobs=-1):
         self.alpha = alpha
         self.n_jobs = n_jobs
         self.model_name = "Ridge_log"
-        self.standardscaler_features = standardscaler_features # 標準化をかけるカラム
+        self.drop_features = drop_features
+        self.standardscaler_features = list(set(standardscaler_features) - set(self.drop_features)) # 標準化をかけるカラム
 
         warnings.simplefilter(action='ignore', category=FutureWarning)
         warnings.simplefilter(action='ignore', category=UserWarning)
@@ -80,6 +81,7 @@ class Ridge_log(Model):
         self.model = model
     
     def fit(self, X, y):
+        X = X.drop(self.drop_features, axis=1)
         self.model.fit(X, y)
         self.coef_ = self.model["transformedtargetregressor"].regressor_.regressor_.coef_.reshape(-1, 1)
         
