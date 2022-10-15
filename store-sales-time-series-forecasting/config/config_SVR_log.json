@@ -1,0 +1,9 @@
+{   
+    "model":"SVR_log",
+    "cv_params": {
+        "C": [0.01, 0.1, 1.0, 10],
+        "gamma": [0.01, 0.1, 1.0, 10],
+        "kernel":["rbf", "linear"],
+        "random_state": [13]
+    }
+}

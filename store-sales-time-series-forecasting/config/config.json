@@ -1,18 +1,73 @@
 {
-    "exclude_features":[
-        "avg_oil"
-    ],
-    "periods": [
-        {"end": "2017-05-31", "start": "2017-04-21"},
-        {"end": "2017-06-30", "start": "2017-06-01"},
-        {"end": "2017-07-31", "start": "2017-07-01"}
-    ],
-    "train_start":"2017-04-21",
-    "train_end":"2017-07-31",
-    "test_start":"2017-08-01",
-    "test_end":"2017-08-15",
-    "sub-train_start":"2017-04-21",
-    "sub-train_end":"2017-08-15",
-    "sub_start":"2017-08-16",
-    "sub_end":"2017-08-31"
+    "family2pattern":{
+        "LINGERIE": "1",
+        "GROCERY II": "1",
+        "HARDWARE": "2",
+        "BEAUTY": "1",
+        "CELEBRATION": "2",
+        "AUTOMOTIVE": "2",
+        "SEAFOOD": "2",
+        "MAGAZINES": "2",
+        "HOME AND KITCHEN I": "1",
+        "LIQUOR,WINE,BEER": "2",
+        "PLAYERS AND ELECTRONICS": "1",
+        "PET SUPPLIES": "2",
+        "HOME AND KITCHEN II": "1",
+        "SCHOOL AND OFFICE SUPPLIES": "1",
+        "LADIESWEAR": "2",
+        "HOME APPLIANCES": "1",
+        "LAWN AND GARDEN": "2",
+        "EGGS": "2",
+        "FROZEN FOODS": "1",
+        "PREPARED FOODS": "1",
+        "PERSONAL CARE": "2",
+        "CLEANING": "1",
+        "MEATS": "2",
+        "POULTRY": "2",
+        "BABY CARE": "2",
+        "PRODUCE": "2",
+        "HOME CARE": "1",
+        "BEVERAGES": "2",
+        "DELI": "2",
+        "GROCERY I": "2",
+        "DAIRY": "2",
+        "BREAD/BAKERY": "2",
+        "BOOKS": "1"},
+    "pattern2drop_columns":{
+        "1":[
+            "avg_oil"
+        ],
+        "2":[
+            "avg_oil",
+            "f_year_cos1_cd165f8c",
+            "f_year_cos3_8db0059c", 
+            "f_finance_umap_4_d6d95b66",
+            "f_mlending_approve_score_d4c33397"
+        ]
+    },
+    "standardscaler":true,
+    "standardscaler_features":["dcoilwtico", "f_finance_umap_4_d6d95b66"],
+    "cv_periods": {
+        "other":[
+            {"end": "2017-05-31", "start": "2017-04-21"},
+            {"end": "2017-06-30", "start": "2017-06-01"},
+            {"end": "2017-07-31", "start": "2017-07-01"}
+        ]
+    },
+    "test_periods":{
+        "other":{
+            "train_start":"2017-04-21",
+            "train_end":"2017-07-31",
+            "test_start":"2017-08-01",
+            "test_end":"2017-08-15"
+        }
+    },
+    "sub_periods":{
+        "other":{
+            "train_start":"2017-04-21",
+            "train_end":"2017-08-15",
+            "sub_start":"2017-08-16",
+            "sub_end":"2017-08-31"
+        }
+    }
 }
