@@ -40,6 +40,7 @@ class RandomForest_rint:
         self.random_state = random_state
         self.n_jobs = n_jobs
         self.model_name = "RandomForest"
+        self.feature_importances_ = None
         
         warnings.simplefilter(action='ignore', category=FutureWarning)
         warnings.simplefilter(action='ignore', category=UserWarning)
@@ -58,6 +59,7 @@ class RandomForest_rint:
     
     def fit(self, X, y):
         self.model.fit(X, y)
+        self.feature_importances_ = self.model.regressor_.feature_importances_
         
     def predict(self, X):
         y_pred = self.model.predict(X)
